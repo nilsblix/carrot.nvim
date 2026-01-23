@@ -3,8 +3,6 @@ local M = {}
 M.config = {
 	-- Enable/disable all italic styling.
 	italics = true,
-    -- Use coloured operators.
-    coloured_operators = true,
 }
 
 function M.setup(opts)
