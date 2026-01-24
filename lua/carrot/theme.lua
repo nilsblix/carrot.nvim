@@ -18,15 +18,15 @@ function M.setup()
         ["@variable.builtin"] = { fg = c.builtin },
         ["@variable.parameter"] = { fg = c.fg },
         ["@variable.parameter.builtin"] = { fg = c.fg },
-        ["@variable.member"] = { fg = c.property },
+        ["@variable.member"] = { fg = c.member },
 
-        ["@constant"] = { fg = c.fg },
-        ["@constant.builtin"] = { fg = c.builtin, bold = true },
+        ["@constant"] = { fg = c.member },
+        ["@constant.builtin"] = { fg = c.builtin },
         ["@constant.macro"] = { fg = c.macro },
 
-        ["@module"] = { fg = c.type },
-        ["@module.builtin"] = { fg = c.builtin, bold = true },
-        ["@label"] = { fg = c.extra_keyword },
+        ["@module"] = { fg = c.fg },
+        ["@module.builtin"] = { fg = c.fg },
+        ["@label"] = { fg = c.keyword },
 
         ["@string"] = { fg = c.string },
         ["@string.documentation"] = { fg = c.string },
@@ -40,17 +40,17 @@ function M.setup()
         ["@character"] = { fg = c.string },
         ["@character.special"] = { fg = c.string },
 
-        ["@boolean"] = { fg = c.builtin, bold = true },
+        ["@boolean"] = { fg = c.literal },
         ["@number"] = { fg = c.literal },
         ["@number.float"] = { fg = c.literal },
 
         ["@type"] = { fg = c.type },
-        ["@type.builtin"] = { fg = c.builtin, bold = true },
+        ["@type.builtin"] = { fg = c.type, bold = true },
         ["@type.definition"] = { fg = c.type },
 
-        ["@attribute"] = { fg = c.punct },
-        ["@attribute.builtin"] = { fg = c.punct },
-        ["@property"] = { fg = c.property },
+        ["@attribute"] = { fg = c.attribute },
+        ["@attribute.builtin"] = { fg = c.attribute },
+        ["@property"] = { fg = c.member },
 
         ["@function"] = { fg = c.func },
         ["@function.builtin"] = { fg = c.builtin },
@@ -61,9 +61,9 @@ function M.setup()
         ["@function.method.call"] = { fg = c.func },
 
         ["@constructor"] = { fg = c.func },
-        ["@operator"] = { fg = c.punct, bold = true },
+        ["@operator"] = { fg = c.operator, bold = true },
 
-        ["@punctuation.delimiter"] = { fg = c.punct, bold = true },
+        ["@punctuation.delimiter"] = { fg = c.operator, bold = true },
         ["@punctuation.bracket"] = { fg = c.fg },
         ["@punctuation.special"] = { fg = c.fg },
 
@@ -71,16 +71,16 @@ function M.setup()
         ["@keyword.coroutine"] = { fg = c.keyword },
         ["@keyword.function"] = { fg = c.keyword },
         ["@keyword.operator"] = { fg = c.keyword },
-        ["@keyword.import"] = { fg = c.builtin },
+        ["@keyword.import"] = { fg = c.keyword },
         ["@keyword.type"] = { fg = c.keyword },
-        ["@keyword.modifier"] = { fg = c.modifier, bold = true },
-        ["@keyword.repeat"] = { fg = c.extra_keyword, bold = true },
-        ["@keyword.return"] = { fg = c.extra_keyword, bold = true },
+        ["@keyword.modifier"] = { fg = c.keyword },
+        ["@keyword.repeat"] = { fg = c.keyword },
+        ["@keyword.return"] = { fg = c.keyword },
         ["@keyword.debug"] = { fg = c.keyword },
         ["@keyword.exception"] = { fg = c.keyword },
 
-        ["@keyword.conditional"] = { fg = c.extra_keyword, bold = true },
-        ["@keyword.conditional.ternary"] = { fg = c.extra_keyword, bold = true },
+        ["@keyword.conditional"] = { fg = c.keyword },
+        ["@keyword.conditional.ternary"] = { fg = c.keyword },
 
         ["@keyword.directive"] = { fg = c.builtin },
         ["@keyword.directive.define"] = { fg = c.builtin },
@@ -133,13 +133,6 @@ function M.setup()
         ["@conceal"] = { fg = c.fg_light },
         ["@spell"] = { fg = c.none, bg = c.none },
         ["@nospell"] = { fg = c.none, bg = c.none },
-
-		["@lsp.type.keyword"] = {},
-		["@lsp.type.modifier"] = {},
-		-- Let TS control builtin vs user-defined types for these filetypes.
-		["@lsp.type.type.zig"] = {},
-		["@lsp.type.type.rust"] = {},
-		["@lsp.type.type.ocaml"] = {},
 
 		Normal = { fg = c.fg, bg = c.bg },
 		NormalFloat = { fg = c.fg, bg = c.bg_float },
@@ -197,7 +190,7 @@ function M.setup()
 		diffOldFile = { fg = c.git_delete },
 		diffNewFile = { fg = c.git_add },
 		diffFile = { fg = c.blue },
-		diffLine = { fg = c.property },
+		diffLine = { fg = c.member },
 		diffIndexLine = { fg = c.fg_dark },
 
 		Underlined = { fg = c.link, underline = true },
@@ -288,14 +281,14 @@ function M.setup()
 		["@lsp.type.parameter"] = "@variable.parameter",
 		["@lsp.type.variable"] = "@variable",
 		["@lsp.type.property"] = "@property",
-		["@lsp.type.enumMember"] = "@constant",
+		["@lsp.type.enumMember"] = "@variable.member",
 		["@lsp.type.function"] = "@function",
 		["@lsp.type.method"] = "@function.method",
 		["@lsp.type.macro"] = "@function.macro",
 		["@lsp.type.decorator"] = "@function.macro",
 		["@lsp.type.comment"] = "@comment",
 		["@lsp.type.operator"] = "@operator",
-		["@lsp.type.builtin"] = "@type.builtin",
+		["@lsp.type.builtin"] = "@variable.builtin",
 		["@lsp.type.builtinType"] = "@type.builtin",
     }
 
