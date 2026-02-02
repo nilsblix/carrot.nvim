@@ -18,6 +18,8 @@ Neovim colorscheme because I was torn between different ones.
 require("carrot").setup({
 	-- Enable/disable all italic styling.
 	italics = true,
+    -- Enable/disable all bold styling.
+    bold = true,
 })
 ```
 

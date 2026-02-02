@@ -1,70 +1,43 @@
-local palette = {
-	-- Base
-	bg = "#212121",
-	bg_light = "#282828",
-	bg_extra_light = "#353535",
-	fg = "#dddddd",
-	fg_dark = "#aaaaaa",
-	fg_super_dark = "#818181",
-	comment = "#8a8a8a",
-	none = "NONE",
+local hslutil = require("carrot.hsl")
+local hsl = hslutil.hslToHex
 
-	-- Syntax
-	keyword = "#FF7B72",
-	member = "#FFA198",
-	operator = "#79C0FF",
-	attribute = "#79C0FF",
-	func = "#D1A8FF",
-	type = "#5be3c8",
-	string = "#A5D6FF",
-	literal = "#A5D6FF",
-	macro = "#C6D73E",
-	builtin = "#fcd360",
+local M = {}
 
-	-- Accents
-	sec_green = "#15AC91",
-	sec_cyan = "#75D3BA",
-	sec_teal = "#82D2CE",
-	sec_orange = "#EFB080",
-	sec_yellow = "#F8C762",
-	sec_purple = "#AA9BF5",
-	sec_blue = "#228DF2",
+M.palette = {
+    base05    = hsl(0, 0, 9),
+    base04    = hsl(0, 0, 13),
+    base03    = hsl(0, 0, 16),
+    base02    = hsl(0, 0, 23),
+    base01    = hsl(3, 0, 40),
+    base00    = hsl(7, 0, 65),
+    base0     = hsl(0, 0, 87),
 
-	-- UI
-	selection = "#163761",
-	selection_inactive = "#363636",
-	line_number = "#535353",
-	line_number_active = "#C2C2C2",
-	border = "#383838",
-	border_focus = "#4F4F4F",
-	search = "#163764",
+    red100    = hsl(5, 100, 80),
+    red200    = hsl(4, 100, 72),
+    red300    = hsl(0, 75, 42),
+    red400    = hsl(0, 51, 19),
 
-	-- Diagnostics
-	error = "#F14C4C",
-	warning = "#EA7620",
-	info = "#228DF2",
-	hint = "#A8CC72",
+    blue100   = hsl(207, 100, 82),
+    blue200   = hsl(208, 100, 74),
+    blue300   = hsl(209, 89, 54),
+    blue400   = hsl(214, 63, 23),
 
-	-- Git
-	git_add = "#15AC91",
-	git_change = "#E5B95C",
-	git_delete = "#F14C4C",
-	git_ignored = "#666666",
+    purple100 = hsl(268, 100, 83),
 
-	-- Diff
-	diff_add_bg = "#2C3C39",
-	diff_add_text_bg = "#2C3C39",
-	diff_delete_bg = "#412222",
+    cyan100   = hsl(168, 71, 62),
+    cyan200   = hsl(169, 68, 48),
+    cyan300   = hsl(169, 68, 38),
+    cyan400   = hsl(169, 88, 28),
+    cyan500   = hsl(169, 98, 18),
 
-	-- Misc
-	link = "#228DF2",
+    yellow100 = hsl(40, 91, 68),
+    yellow200 = hsl(37, 72, 53),
+    yellow300 = hsl(28, 53, 44),
+    yellow400 = hsl(28, 73, 24),
+
+    green100  = hsl(67, 66, 54),
+    green200  = hsl(74, 77, 32),
+    green500  = hsl(74, 97, 11),
 }
-
-local M = { palette = palette }
-
-function M.setup()
-	local theme = require("carrot.themes").default(palette)
-	return { palette = palette, theme = theme }
-end
 
 return M
