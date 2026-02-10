@@ -3,8 +3,8 @@ local M = {}
 M.get = function(_, palette)
     local p = palette
 	return {
-		DiagnosticError             = { fg = p.red300 },
-		DiagnosticWarn              = { fg = p.yellow200 },
+		DiagnosticError             = { fg = p.red100, bg = p.red250 },
+		DiagnosticWarn              = { fg = p.yellow100, bg = p.yellow300 },
 		DiagnosticInfo              = { fg = p.base00 },
 		DiagnosticHint              = { fg = p.cyan400 },
 		DiagnosticUnderlineError    = { undercurl = true },
