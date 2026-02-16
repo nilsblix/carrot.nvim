@@ -5,6 +5,8 @@ M.config = {
 	italics = true,
     -- Enable/disable all bold styling.
     bold = true,
+    -- Enable/disable ui styling, ex show tabline.
+    ui = false,
 }
 
 M.setup = function(opts)
@@ -32,6 +34,10 @@ M.setup = function(opts)
     local lsp = require("carrot.lsp").get(M.config, palette)
     for group, spec in pairs(lsp) do
         vim.api.nvim_set_hl(0, group, spec)
+    end
+
+    if M.config.ui then
+        vim.opt.showtabline = 2
     end
 end
 

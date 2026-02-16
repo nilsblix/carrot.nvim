@@ -6,7 +6,7 @@ M.get = function(_, palette)
 		Normal           = { fg = p.base0, bg = p.base04 },
 		NormalFloat      = { fg = p.base0, bg = p.base03 },
 
-		LineNr           = { fg = p.base01 },
+		LineNr           = { fg = p.base01, bg = p.base03 },
 
 		Visual           = { bg = p.base01 },
 		VisualNOS        = { bg = p.base00 },

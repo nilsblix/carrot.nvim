@@ -20,6 +20,8 @@ require("carrot").setup({
 	italics = true,
     -- Enable/disable all bold styling.
     bold = true,
+    -- Enable/disable ui styling, ex show tabline.
+    ui = false,
 })
 ```
 
